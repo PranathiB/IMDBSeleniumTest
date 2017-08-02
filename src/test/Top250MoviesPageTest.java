@@ -1,30 +1,16 @@
-import helper.ScreenshotHelperClass;
-import org.junit.*;
-import org.junit.rules.TestRule;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.chrome.ChromeDriver;
-import pages.IMDbTop250Page;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import pages.IMDbTop250MovieResultsPage;
 
-public class Top250MoviesPageTest {
+public class Top250MoviesPageTest extends BaseTest{
     private static final int MINIMUM_RESULTS = 1;
     private static final int MAXIMUM_RESULTS = 250;
-    private IMDbTop250Page top250ResultsPage;
-
-    private static ChromeDriver driver;
-
-    @Rule
-    public TestRule screenshotTaker = new ScreenshotHelperClass((TakesScreenshot) driver);
-
-    @BeforeClass
-    public static void setUp() throws Exception {
-        System.setProperty("webdriver.chrome.driver", "src/resources/driver/chromedriver");
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-    }
+    private IMDbTop250MovieResultsPage top250ResultsPage;
 
     @Before
     public void openBrowserWithURL(){
-        top250ResultsPage = new IMDbTop250Page(driver);
+        top250ResultsPage = new IMDbTop250MovieResultsPage(driver);
         top250ResultsPage.go();
     }
 
@@ -77,12 +63,6 @@ public class Top250MoviesPageTest {
     private void assertMaximunResultsCount() {
         Assert.assertTrue("At max 250 movies are expected in the list",
                 top250ResultsPage.getMoviesCount() <= MAXIMUM_RESULTS);
-    }
-
-
-    @AfterClass
-    public static void tearDown() throws Exception {
-        driver.quit();
     }
 
 }
