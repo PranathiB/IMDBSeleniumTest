@@ -1,3 +1,4 @@
 IMDBSeleniumTest.iml
 .idea
 target
+src/main/resources
