@@ -7,7 +7,7 @@ import pages.IMDbTop250Page;
 
 public class TopMoviesPageTest {
     private static final int MINIMUM_RESULTS = 1;
-    private static final int MAXIMUM_RESULTS = 1;
+    private static final int MAXIMUM_RESULTS = 250;
     private IMDbTop250Page top250ResultsPage;
 
     private static ChromeDriver driver;
