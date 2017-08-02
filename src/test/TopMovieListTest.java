@@ -1,13 +1,7 @@
 import org.junit.*;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.IMDbTop250Page;
-
-import java.util.List;
 
 public class TopMovieListTest {
     public static final int MINIMUM = 1;
@@ -33,15 +27,43 @@ public class TopMovieListTest {
     }
 
     @Test
-    public void shouldHaveAtLeastOneMovieOnTopShowsPage(){
-        Assert.assertTrue("At least one movie is expected in the list",
-                top250ResultsPage.getMoviesCount() >= MINIMUM);
+    public void shouldHaveAtLeastOneMovieOnTopRatedMoviesPage(){
+        assertThatAtLeastOneMovieResultIsDisplayed();
     }
 
     @Test
     public void shouldHaveAtLeastOneMovieWhenSortedByReleaseDate(){
-        top250ResultsPage.sortMoviesByRanking();
+        top250ResultsPage.sortMoviesBy("Release Date");
+        assertThatAtLeastOneMovieResultIsDisplayed();
+    }
+
+    @Test
+    public void shouldHaveAtLeastOneMovieWhenSortedByImdbRating(){
+        top250ResultsPage.sortMoviesBy("IMDb Rating");
+        assertThatAtLeastOneMovieResultIsDisplayed();
+    }
+
+    @Test
+    public void shouldHaveAtLeastOneMovieWhenSortedByNumberOfRatings(){
+        top250ResultsPage.sortMoviesBy("Number of Ratings");
+        assertThatAtLeastOneMovieResultIsDisplayed();
+    }
+
+    @Test
+    public void shouldHaveAtLeastOneMovieWhenSortedByRanking(){
+        top250ResultsPage.sortMoviesBy("Ranking");
+        assertThatAtLeastOneMovieResultIsDisplayed();
+    }
+
+    @Test
+    public void shouldHaveAtLeastOneMovieWhenSortedByYourRating(){
+        top250ResultsPage.sortMoviesBy("Your Rating");
+        assertThatAtLeastOneMovieResultIsDisplayed();
+    }
+
+    private void assertThatAtLeastOneMovieResultIsDisplayed() {
         Assert.assertTrue("At least one movie is expected in the list",
                 top250ResultsPage.getMoviesCount() >= MINIMUM);
     }
+
 }
