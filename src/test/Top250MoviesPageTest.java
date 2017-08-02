@@ -5,7 +5,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.IMDbTop250Page;
 
-public class TopMoviesPageTest {
+public class Top250MoviesPageTest {
     private static final int MINIMUM_RESULTS = 1;
     private static final int MAXIMUM_RESULTS = 250;
     private IMDbTop250Page top250ResultsPage;
