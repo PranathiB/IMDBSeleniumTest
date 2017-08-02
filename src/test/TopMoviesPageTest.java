@@ -33,41 +33,41 @@ public class TopMoviesPageTest {
         assertThatAtLeastOneMovieResultIsDisplayed();
         assertMaximunResultsCount();
     }
-//
-//    @Test
-//    public void shouldHaveAtLeastOneMovieWhenSortedByReleaseDate(){
-//        top250ResultsPage.sortMoviesBy("Release Date");
-//        assertThatAtLeastOneMovieResultIsDisplayed();
-//        assertMaximunResultsCount();
-//    }
-//
-//    @Test
-//    public void shouldHaveAtLeastOneMovieWhenSortedByImdbRating(){
-//        top250ResultsPage.sortMoviesBy("IMDb Rating");
-//        assertThatAtLeastOneMovieResultIsDisplayed();
-//        assertMaximunResultsCount();
-//    }
-//
-//    @Test
-//    public void shouldHaveAtLeastOneMovieWhenSortedByNumberOfRatings(){
-//        top250ResultsPage.sortMoviesBy("Number of Ratings");
-//        assertThatAtLeastOneMovieResultIsDisplayed();
-//        assertMaximunResultsCount();
-//    }
-//
-//    @Test
-//    public void shouldHaveAtLeastOneMovieWhenSortedByRanking(){
-//        top250ResultsPage.sortMoviesBy("Ranking");
-//        assertThatAtLeastOneMovieResultIsDisplayed();
-//        assertMaximunResultsCount();
-//    }
-//
-//    @Test
-//    public void shouldHaveAtLeastOneMovieWhenSortedByYourRating(){
-//        top250ResultsPage.sortMoviesBy("Your Rating");
-//        assertThatAtLeastOneMovieResultIsDisplayed();
-//        assertMaximunResultsCount();
-//    }
+
+    @Test
+    public void shouldHaveAtLeastOneMovieWhenSortedByReleaseDate(){
+        top250ResultsPage.sortMoviesBy("Release Date");
+        assertThatAtLeastOneMovieResultIsDisplayed();
+        assertMaximunResultsCount();
+    }
+
+    @Test
+    public void shouldHaveAtLeastOneMovieWhenSortedByImdbRating(){
+        top250ResultsPage.sortMoviesBy("IMDb Rating");
+        assertThatAtLeastOneMovieResultIsDisplayed();
+        assertMaximunResultsCount();
+    }
+
+    @Test
+    public void shouldHaveAtLeastOneMovieWhenSortedByNumberOfRatings(){
+        top250ResultsPage.sortMoviesBy("Number of Ratings");
+        assertThatAtLeastOneMovieResultIsDisplayed();
+        assertMaximunResultsCount();
+    }
+
+    @Test
+    public void shouldHaveAtLeastOneMovieWhenSortedByRanking(){
+        top250ResultsPage.sortMoviesBy("Ranking");
+        assertThatAtLeastOneMovieResultIsDisplayed();
+        assertMaximunResultsCount();
+    }
+
+    @Test
+    public void shouldHaveAtLeastOneMovieWhenSortedByYourRating(){
+        top250ResultsPage.sortMoviesBy("Your Rating");
+        assertThatAtLeastOneMovieResultIsDisplayed();
+        assertMaximunResultsCount();
+    }
 
     private void assertThatAtLeastOneMovieResultIsDisplayed() {
         Assert.assertTrue("At least one movie is expected in the list",
