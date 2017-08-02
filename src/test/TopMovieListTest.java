@@ -1,23 +1,25 @@
+import org.apache.commons.io.FileUtils;
 import org.junit.*;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.IMDbTop250Page;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.UUID;
+
 public class TopMovieListTest {
-    public static final int MINIMUM = 1;
+    private static final int MINIMUM = 1;
     private static ChromeDriver driver;
-    private static WebDriverWait wait;
     private IMDbTop250Page top250ResultsPage;
 
     @BeforeClass
     public static void setUp() throws Exception {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver");
         driver = new ChromeDriver();
-    }
-
-    @AfterClass
-    public static void tearDown() throws Exception {
-        driver.quit();
+        driver.manage().window().maximize();
     }
 
     @Before
@@ -64,6 +66,21 @@ public class TopMovieListTest {
     private void assertThatAtLeastOneMovieResultIsDisplayed() {
         Assert.assertTrue("At least one movie is expected in the list",
                 top250ResultsPage.getMoviesCount() >= MINIMUM);
+    }
+
+    @After
+    public void captureScreenShot() throws IOException {
+        System.out.println("Take screenshot:"+"\n");
+        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        String fileName = UUID.randomUUID().toString();
+        File targetFile = new File("src/test/reports/" + fileName + ".png");
+        System.out.println(targetFile);
+        FileUtils.copyFile(scrFile, targetFile);
+    }
+
+    @AfterClass
+    public static void tearDown() throws Exception {
+        driver.quit();
     }
 
 }

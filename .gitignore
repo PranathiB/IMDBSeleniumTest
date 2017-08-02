@@ -2,3 +2,4 @@ IMDBSeleniumTest.iml
 .idea
 target
 src/main/resources
+src/test/reports
