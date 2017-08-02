@@ -25,7 +25,7 @@ Downloading chromedriver and running tests on chrome is advised as the the lates
 1. Downloading the chromedriver for the OS under use
 2. Running the maven commands to invoke the tests
 
-If you wish to run the tests from and IDE like IntelliJ:
+**If you wish to run the tests from and IDE like IntelliJ:**
 1. Clone the repo
 2. Open the project in the IDE
 3. Download chromedriver from the below url https://chromedriver.storage.googleapis.com/index.html?path=2.25/
