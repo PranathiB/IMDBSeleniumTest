@@ -1,7 +1,4 @@
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,13 +23,24 @@ public class TopMovieListTest {
 
     @AfterClass
     public static void tearDown() throws Exception {
-//        driver.quit();
+        driver.quit();
+    }
+
+    @Before
+    public void openBrowserWithURL(){
+        top250ResultsPage = new IMDbTop250Page(driver);
+        top250ResultsPage.go();
     }
 
     @Test
     public void shouldHaveAtLeastOneMovieOnTopShowsPage(){
-        top250ResultsPage = new IMDbTop250Page(driver);
-        top250ResultsPage.go();
+        Assert.assertTrue("At least one movie is expected in the list",
+                top250ResultsPage.getMoviesCount() >= MINIMUM);
+    }
+
+    @Test
+    public void shouldHaveAtLeastOneMovieWhenSortedByReleaseDate(){
+        top250ResultsPage.sortMoviesByRanking();
         Assert.assertTrue("At least one movie is expected in the list",
                 top250ResultsPage.getMoviesCount() >= MINIMUM);
     }
