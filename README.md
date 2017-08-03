@@ -28,6 +28,6 @@ Downloading chromedriver and running tests on chrome is advised as the the lates
 **If you wish to run the tests from and IDE like IntelliJ:**
 1. Clone the repo
 2. Open the project in the IDE
-3. Download chromedriver from the below url https://chromedriver.storage.googleapis.com/index.html?path=2.25/
+3. Download chromedriver from the below url https://chromedriver.storage.googleapis.com/index.html?path=2.31/
 4. Unzip and place it in the following location
 `src/main/resources/driver/`
