@@ -36,13 +36,14 @@ Downloading chromedriver and running tests on chrome is advised as the the lates
 4. Unzip and place it in the following location
 `src/resources/driver/`
 5. Select the test folder and run all tests or individual tests
+6. Alternatively you can also use maven command `mvn clean test`
 
 
 **Framework Design**
 
 These tests are built using Page Object Pattern(POP) [https://martinfowler.com/bliki/PageObject.html]
 
-_src/resources/_  : Contains the chromedriver executable that is downloaded based on the operating system using RunTest.sh
+_resources/_  : Contains the chromedriver executable that is downloaded based on the operating system using RunTest.sh
 
 _test/_ : Contains the test classes
 
