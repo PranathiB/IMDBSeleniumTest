@@ -49,13 +49,10 @@ public class IMDbTop250MovieResultsPage {
         return moviesList.get(0).getText();
     }
 
-    public WesternGenreMovieResultsPage clickOnWesternGenreLinkFromSideBar() {
+    public GenreBasedMovieResultsPage clickOnGenreFromTheSieBar(String genreName) {
         waitUntilAllElementsAreVisible(movieGenreSideBarLinks);
-        clickOnGenre("Western");
-        return new WesternGenreMovieResultsPage(driver);
+        driver.findElement(By.linkText(genreName)).click();
+        return new GenreBasedMovieResultsPage(driver);
     }
 
-    private void clickOnGenre(String genreName) {
-        driver.findElement(By.linkText(genreName)).click();
-    }
 }

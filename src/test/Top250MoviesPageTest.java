@@ -1,18 +1,9 @@
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
-import pages.IMDbTop250MovieResultsPage;
 
 public class Top250MoviesPageTest extends BaseTest{
     private static final int MINIMUM_RESULTS = 1;
     private static final int MAXIMUM_RESULTS = 250;
-    private IMDbTop250MovieResultsPage top250ResultsPage;
-
-    @Before
-    public void openBrowserWithURL(){
-        top250ResultsPage = new IMDbTop250MovieResultsPage(driver);
-        top250ResultsPage.go();
-    }
 
     @Test
     public void shouldHaveAtLeastOneMovieOnTopRatedMoviesPage(){

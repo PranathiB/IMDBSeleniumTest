@@ -8,22 +8,26 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class WesternGenreMovieResultsPage {
+public class GenreBasedMovieResultsPage {
     private WebDriver driver;
     private WebDriverWait wait;
-    private By movieListSelector = By.cssSelector(".lister-list");
+    private By movieResultsList = By.cssSelector(".lister-list");
 
-    public WesternGenreMovieResultsPage(WebDriver driver){
+    GenreBasedMovieResultsPage(WebDriver driver){
         this.driver = driver;
         this.wait = new WebDriverWait(driver, 10);
     }
 
-    public int getMoviesCount() {
-        waitUntilAllElementsAreVisible(movieListSelector);
-        List< WebElement > moviesList = driver.findElements(movieListSelector);
-        return moviesList.size();
+    public int getMovieResultsCount() {
+        waitUntilAllElementsAreVisible(movieResultsList);
+        List< WebElement > movieResults = driver.findElements(movieResultsList);
+        return movieResults.size();
     }
     private void waitUntilAllElementsAreVisible(By selector) {
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(selector));
+    }
+
+    public String getTitle() {
+        return driver.getTitle();
     }
 }

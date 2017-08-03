@@ -1,30 +1,44 @@
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
-import pages.IMDbTop250MovieResultsPage;
-import pages.WesternGenreMovieResultsPage;
+import pages.GenreBasedMovieResultsPage;
 
 public class TopRatedMoviesByGenrePageTest extends BaseTest {
-    private IMDbTop250MovieResultsPage top250ResultsPage;
-    private WesternGenreMovieResultsPage westernGenreMovieResultsPage;
 
     private static final int MINIMUM_RESULTS = 1;
-
-
-    @Before
-    public void openBrowserWithURL(){
-        top250ResultsPage = new IMDbTop250MovieResultsPage(driver);
-        top250ResultsPage.go();
-    }
+    private static final String EXPECTED_WESTERN_GENRE_PAGE_TITLE = "Highest Rated Western Feature Films";
+    private static final String EXPECTED_ROMANCE_GENRE_PAGE_TITLE = "Highest Rated Romance Feature Films";
 
     @Test
-    public void shouldHaveAtLeastOneMovieInWesternGenre(){
-        westernGenreMovieResultsPage = top250ResultsPage.clickOnWesternGenreLinkFromSideBar();
-        assertThatAtLeastOneMovieResultIsDisplayed();
+    public void shouldHaveAtLeastOneMovieInWesternGenreResults(){
+
+        GenreBasedMovieResultsPage westernGenreMovieResultsPage = top250ResultsPage.clickOnGenreFromTheSieBar("Western");
+
+        assertPageTitleForTheGenre("This is not Western Genre page. Did you click on the correct link?",
+                westernGenreMovieResultsPage.getTitle(), EXPECTED_WESTERN_GENRE_PAGE_TITLE);
+
+        assertThatAtLeastOneMovieResultIsDisplayed(westernGenreMovieResultsPage.getMovieResultsCount());
     }
 
-    private void assertThatAtLeastOneMovieResultIsDisplayed() {
-        Assert.assertTrue("At least one movie is expected in the list",
-                westernGenreMovieResultsPage.getMoviesCount() >= MINIMUM_RESULTS);
+
+
+    @Test
+    public void shouldHaveAtLeastOneMovieInRomanceGenreResults(){
+
+        GenreBasedMovieResultsPage romanceGenreMovieResultsPage = top250ResultsPage.clickOnGenreFromTheSieBar("Romance");
+
+        assertPageTitleForTheGenre("This is not Romance Genre page. Did you click on the correct link?",
+                romanceGenreMovieResultsPage.getTitle(), EXPECTED_ROMANCE_GENRE_PAGE_TITLE);
+
+        assertThatAtLeastOneMovieResultIsDisplayed(romanceGenreMovieResultsPage.getMovieResultsCount());
+    }
+
+
+    private void assertPageTitleForTheGenre(String message, String actualTitle, String expectedTitle) {
+        Assert.assertTrue(message, actualTitle.contains(expectedTitle));
+    }
+
+    private void assertThatAtLeastOneMovieResultIsDisplayed(int totalMovieResults) {
+        Assert.assertTrue("At least one movie result is expected for the selected genre",
+                totalMovieResults >= MINIMUM_RESULTS);
     }
 }
