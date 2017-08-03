@@ -1,4 +1,4 @@
-package helper;
+package helpers;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.rules.TestWatcher;

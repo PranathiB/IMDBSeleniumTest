@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: IMDbTop250MovieResultsPageTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 85.919 sec - in IMDbTop250MovieResultsPageTest

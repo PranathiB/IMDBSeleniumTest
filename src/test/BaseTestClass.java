@@ -1,4 +1,4 @@
-import helper.ScreenshotHelperClass;
+import helpers.ScreenshotHelperClass;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -6,9 +6,9 @@ import org.junit.Rule;
 import org.junit.rules.TestRule;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pages.IMDbTop250MovieResultsPage;
+import pageObjects.IMDbTop250MovieResultsPage;
 
-public class BaseTest {
+public class BaseTestClass {
 
     private static ChromeDriver driver;
 

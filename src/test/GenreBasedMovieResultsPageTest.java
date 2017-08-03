@@ -1,8 +1,8 @@
 import org.junit.Assert;
 import org.junit.Test;
-import pages.GenreBasedMovieResultsPage;
+import pageObjects.GenreBasedMovieResultsPage;
 
-public class TopRatedMoviesByGenrePageTest extends BaseTest {
+public class GenreBasedMovieResultsPageTest extends BaseTestClass {
 
     private static final int MINIMUM_RESULTS = 1;
     private static final String EXPECTED_WESTERN_GENRE_PAGE_TITLE = "Highest Rated Western Feature Films";
@@ -18,8 +18,6 @@ public class TopRatedMoviesByGenrePageTest extends BaseTest {
 
         assertThatAtLeastOneMovieResultIsDisplayed(westernGenreMovieResultsPage.getMovieResultsCount());
     }
-
-
 
     @Test
     public void shouldHaveAtLeastOneMovieInRomanceGenreResults(){
