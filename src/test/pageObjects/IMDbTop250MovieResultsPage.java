@@ -1,18 +1,23 @@
 package pageObjects;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.List;
+
+/*
+ * Top 250 movie results page object.
+ * Returns the total movie results found on the page
+ * Clicks on dropdown to select a sorting category
+*/
 
 public class IMDbTop250MovieResultsPage {
     private WebDriver driver;
     private WebDriverWait wait;
 
+    // Locators of interest on top movies page
     private By SortByDropDown = By.cssSelector(".lister-sort-by");
     private By movieResultsList = By.cssSelector(".lister-list tr");
     private By movieGenreSideBarLinks = By.cssSelector(".quicklinks");
@@ -33,9 +38,6 @@ public class IMDbTop250MovieResultsPage {
         List< WebElement > moviesList = driver.findElements(movieResultsList);
         return moviesList.size();
     }
-    private void waitUntilAllElementsAreVisible(By selector) {
-        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(selector));
-    }
 
     public void sortMoviesBy(String sortOption) {
         waitUntilAllElementsAreVisible(SortByDropDown);
@@ -53,4 +55,7 @@ public class IMDbTop250MovieResultsPage {
         return new GenreBasedMovieResultsPage(driver);
     }
 
+    private void waitUntilAllElementsAreVisible(By selector) {
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(selector));
+    }
 }

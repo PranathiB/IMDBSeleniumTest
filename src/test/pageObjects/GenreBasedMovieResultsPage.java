@@ -5,9 +5,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+/*
+ * Genre based page object.
+ * Returns the total movie results found on the page
+ * Returns title of the page
+*/
+
 public class GenreBasedMovieResultsPage {
     private WebDriver driver;
     private WebDriverWait wait;
+
+    // Locators of interest on the page
     private By movieResultsList = By.cssSelector(".lister-list");
 
     GenreBasedMovieResultsPage(WebDriver driver){

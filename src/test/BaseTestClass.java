@@ -8,6 +8,13 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pageObjects.IMDbTop250MovieResultsPage;
 
+
+/***
+
+    BASE TEST CLASS to initiate webdriver and open the url
+
+***/
+
 public class BaseTestClass {
 
     private static ChromeDriver driver;
