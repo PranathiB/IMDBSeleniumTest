@@ -49,7 +49,7 @@
                 <version>2.19.1</version>
                 <configuration>
                     <testFailureIgnore>false</testFailureIgnore>
-                    <reportsDirectory>src/test/reports/</reportsDirectory>
+                    <reportsDirectory>src/reports/</reportsDirectory>
                 </configuration>
                 <dependencies>
                     <dependency>

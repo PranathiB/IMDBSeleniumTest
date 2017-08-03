@@ -11,7 +11,7 @@ public class TopRatedMoviesByGenrePageTest extends BaseTest {
     @Test
     public void shouldHaveAtLeastOneMovieInWesternGenreResults(){
 
-        GenreBasedMovieResultsPage westernGenreMovieResultsPage = top250ResultsPage.clickOnGenreFromTheSieBar("Western");
+        GenreBasedMovieResultsPage westernGenreMovieResultsPage = top250ResultsPage.clickOnGenre("Western");
 
         assertPageTitleForTheGenre("This is not Western Genre page. Did you click on the correct link?",
                 westernGenreMovieResultsPage.getTitle(), EXPECTED_WESTERN_GENRE_PAGE_TITLE);
@@ -24,7 +24,7 @@ public class TopRatedMoviesByGenrePageTest extends BaseTest {
     @Test
     public void shouldHaveAtLeastOneMovieInRomanceGenreResults(){
 
-        GenreBasedMovieResultsPage romanceGenreMovieResultsPage = top250ResultsPage.clickOnGenreFromTheSieBar("Romance");
+        GenreBasedMovieResultsPage romanceGenreMovieResultsPage = top250ResultsPage.clickOnGenre("Romance");
 
         assertPageTitleForTheGenre("This is not Romance Genre page. Did you click on the correct link?",
                 romanceGenreMovieResultsPage.getTitle(), EXPECTED_ROMANCE_GENRE_PAGE_TITLE);

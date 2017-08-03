@@ -1,7 +1,6 @@
 package helper;
 
 import org.apache.commons.io.FileUtils;
-import org.junit.rules.TestRule;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 import org.openqa.selenium.OutputType;
@@ -20,7 +19,7 @@ public class ScreenshotHelperClass extends TestWatcher {
     @Override
     protected void failed(Throwable e, Description description) {
         File screenshot = takesScreenshot.getScreenshotAs(OutputType.FILE);
-        File targetFile = new File("src/test/reports/" + description + ".png");
+        File targetFile = new File("src/reports/" + description + ".png");
         try {
             FileUtils.copyFile(screenshot, targetFile);
         } catch (IOException exception) {

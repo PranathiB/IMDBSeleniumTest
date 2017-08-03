@@ -2,11 +2,8 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.List;
 
 public class GenreBasedMovieResultsPage {
     private WebDriver driver;
@@ -20,8 +17,7 @@ public class GenreBasedMovieResultsPage {
 
     public int getMovieResultsCount() {
         waitUntilAllElementsAreVisible(movieResultsList);
-        List< WebElement > movieResults = driver.findElements(movieResultsList);
-        return movieResults.size();
+        return driver.findElements(movieResultsList).size();
     }
     private void waitUntilAllElementsAreVisible(By selector) {
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(selector));

@@ -39,17 +39,15 @@ public class IMDbTop250MovieResultsPage {
 
     public void sortMoviesBy(String sortOption) {
         waitUntilAllElementsAreVisible(SortByDropDown);
-        Select sortingDropDown = new Select(driver.findElement(SortByDropDown));
-        sortingDropDown.selectByVisibleText(sortOption);
+        new Select(driver.findElement(SortByDropDown)).selectByVisibleText(sortOption);
     }
 
-    public String getFirstResultTitle(){
+    public String getFirstMovieResultTitle(){
         waitUntilAllElementsAreVisible(movieResultsList);
-        List< WebElement > moviesList = driver.findElements(movieResultsList);
-        return moviesList.get(0).getText();
+        return driver.findElements(movieResultsList).get(0).getText();
     }
 
-    public GenreBasedMovieResultsPage clickOnGenreFromTheSieBar(String genreName) {
+    public GenreBasedMovieResultsPage clickOnGenre(String genreName) {
         waitUntilAllElementsAreVisible(movieGenreSideBarLinks);
         driver.findElement(By.linkText(genreName)).click();
         return new GenreBasedMovieResultsPage(driver);
