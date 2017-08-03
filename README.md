@@ -31,3 +31,4 @@ Downloading chromedriver and running tests on chrome is advised as the the lates
 3. Download chromedriver from the below url https://chromedriver.storage.googleapis.com/index.html?path=2.31/
 4. Unzip and place it in the following location
 `src/main/resources/driver/`
+5. Select the test folder and run all tests or individual tests
