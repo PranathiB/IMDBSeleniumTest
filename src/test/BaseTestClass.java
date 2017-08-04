@@ -1,11 +1,11 @@
 import helpers.ScreenshotHelperClass;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.rules.TestRule;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import pageObjects.IMDbTop250MovieResultsPage;
 
 
@@ -30,7 +30,7 @@ public class BaseTestClass {
         driver.manage().window().maximize();
     }
 
-    @Before
+    @BeforeMethod
     public void openBrowserWithURL(){
         top250ResultsPage = new IMDbTop250MovieResultsPage(driver);
         top250ResultsPage.go();

@@ -3,3 +3,5 @@ IMDBSeleniumTest.iml
 target
 src/resources
 src/test/reports
+src/surefire/
+src/reports/
