@@ -1,12 +1,10 @@
-import helpers.ScreenshotHelperClass;
-import org.junit.Rule;
-import org.junit.rules.TestRule;
-import org.openqa.selenium.TakesScreenshot;
+package com.imdb.tests;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import pageObjects.IMDbTop250MovieResultsPage;
+import pages.IMDbTop250MovieResultsPage;
 
 
 /***
@@ -19,8 +17,8 @@ public class BaseTestClass {
 
     private static ChromeDriver driver;
 
-    @Rule
-    public TestRule screenshotTaker = new ScreenshotHelperClass((TakesScreenshot) driver);
+//    @Rule
+//    public TestRule screenshotTaker = new ScreenshotHelperClass((TakesScreenshot) driver);
     IMDbTop250MovieResultsPage top250ResultsPage;
 
     @BeforeClass

@@ -7,7 +7,7 @@ case $OS in
   'Linux')
     OS='Linux'
     echo "Using Linux OS"
-    wget -N https://chromedriver.storage.googleapis.com/2.31/chromedriver_linux64.zip -P src/resources/drive
+    wget -N https://chromedriver.storage.googleapis.com/2.31/chromedriver_linux64.zip -P src/resources/driver
     unzip src/resources/driver/chromedriver_linux64.zip -d src/resources/driver
     ;;
   'Darwin')
@@ -22,6 +22,6 @@ esac
 # Make the chromedrive executable
 chmod +x src/resources/driver/chromedriver
 
-# Compile and run the tests
-mvn compile
+# Run the tests
 mvn clean test
+echo $classpath

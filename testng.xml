@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="IMDB Selenium Suite" verbose="1"  >
+    <test name="Top 250 Movies Page Test" >
+        <classes>
+            <class name="com.imdb.tests.IMDbTop250MovieResultsPageTest"/>
+        </classes>
+    </test>
+    <test name="Genre Page Test" >
+        <classes>
+            <class name="com.imdb.tests.GenreBasedMovieResultsPageTest"/>
+        </classes>
+    </test>
+</suite>

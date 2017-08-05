@@ -1,7 +1,9 @@
+package com.imdb.tests;
+
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import pageObjects.GenreBasedMovieResultsPage;
+import pages.GenreBasedMovieResultsPage;
 
 public class GenreBasedMovieResultsPageTest extends BaseTestClass {
 
