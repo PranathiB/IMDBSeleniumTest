@@ -6,6 +6,11 @@ These tests are written using _Selenium 2.53_ and use _maven build tool_.
 
 These tests are configured to run on mac/linux environments without having to do any additional installations. 
 
+**Tech Stack:**
+1. TestNG
+2. Selenium
+3. Maven
+
 **Pre-Requisites:**
 
 1. Apache Maven 3.3.3
@@ -43,13 +48,13 @@ Downloading chromedriver and running tests on chrome is advised as the the lates
 
 These tests are built using Page Object Pattern(POP) [https://martinfowler.com/bliki/PageObject.html]
 
-_resources/_  : Contains the chromedriver executable that is downloaded based on the operating system using RunTest.sh
+_src/resources/_  : Contains the chromedriver executable that is downloaded based on the operating system using RunTest.sh
 
-_test/_ : Contains the test classes
+_com.imdb.tests_ : Contains the test classes
 
-_pageObjects/_  : Contains the pageObject of IMDb results pages
+_test/java/pages/_  : Contains the pageObject of IMDb results pages
 
-_helpers/_  : Contains the helper classes like screenshot helper
+_test/helpers/_  : Contains the helper classes like screenshot helper
 
 _reports/_  : Screenshots and surefire reports are saved in this directory(gitignored)
 
