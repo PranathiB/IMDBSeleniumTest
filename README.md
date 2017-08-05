@@ -54,7 +54,5 @@ _com.imdb.tests_ : Contains the test classes
 
 _test/java/pages/_  : Contains the pageObject of IMDb results pages
 
-_test/helpers/_  : Contains the helper classes like screenshot helper
-
 _target/surefire-reports/_  : Surefire reports are saved in this directory(gitignored)
 
