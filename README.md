@@ -56,5 +56,5 @@ _test/java/pages/_  : Contains the pageObject of IMDb results pages
 
 _test/helpers/_  : Contains the helper classes like screenshot helper
 
-_reports/_  : Screenshots and surefire reports are saved in this directory(gitignored)
+_target/surefire-reports/_  : Surefire reports are saved in this directory(gitignored)
 

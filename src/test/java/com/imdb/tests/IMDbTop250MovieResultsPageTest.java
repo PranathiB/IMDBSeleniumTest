@@ -26,6 +26,7 @@ public class IMDbTop250MovieResultsPageTest extends BaseTestClass {
         assertThatAtLeastOneMovieResultIsDisplayed();
         assertMaximumResultsCount();
     }
+
     private void assertThatAtLeastOneMovieResultIsDisplayed() {
         Assert.assertTrue(top250ResultsPage.getMoviesCount() >= MINIMUM_RESULTS,
                 "At least one movie is expected in the list");
